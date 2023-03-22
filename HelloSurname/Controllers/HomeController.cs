@@ -10,5 +10,11 @@ namespace HelloSurname.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Index(string name)
+        {
+            Debug.WriteLine("Name " + name);
+            return View(new IndexViewModel(name));
+        }
     }
 }
