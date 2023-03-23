@@ -6,15 +6,19 @@ namespace HelloSurname.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Index(string name)
+        public ViewResult HelloName(UserNameInputModel NameInputModel)
         {
-            Debug.WriteLine("Name " + name);
-            return View(new IndexViewModel(name));
+            if (ModelState.IsValid)
+            {
+                return View("HelloName", new IndexViewModel(NameInputModel.Name));
+            }
+            return View("Index");
         }
     }
 }
