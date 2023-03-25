@@ -3,11 +3,12 @@
     ViewData["Title"] = "Hello Noname!";
 }
 
-<div class="text-center">
-        <form asp-action="HelloName" method="post">
-            <input asp-for="Name" type="text" name="name" />
-            <input type="submit" value="Send" class="btn btn-primary" />
-        </form>
-        <div asp-validation-summary="All"></div>
+<div>
+    <form asp-action="HelloName" method="post" class="d-flex justify-content-between m-auto" style="width: 330px;">
+        <input asp-for="Name" type="text" name="name" class="form-control border border-primary" style="width: 250px;" placeholder="name" />
+        <input type="submit" value="Send" class="btn btn-primary" />
+    </form>
+    <div asp-validation-summary="All" class="text-center mt-2"></div>
+
 </div>
 
